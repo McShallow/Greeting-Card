@@ -45,7 +45,6 @@
             transform: scale(1.1);
         }
 
-        /* HUGE SURPRISE EMOJI */
         #surprise {
             display: none;
             font-size: 300px;
@@ -95,9 +94,9 @@
 
     <div class="container">
 
-        <h1>🎁 I Have a Surprise for You! 🎁</h1>
+        <h1 id="title">🎁 I Have a Surprise for You! 🎁</h1>
 
-        <button onclick="showSurprise()">
+        <button id="surpriseButton" onclick="showSurprise()">
             CLICK ME 😏
         </button>
 
@@ -108,9 +107,14 @@
     <script>
         function showSurprise() {
 
-            const surprise = document.getElementById("surprise");
+            // Remove the button
+            document.getElementById("surpriseButton").remove();
 
-            surprise.style.display = "block";
+            // Show the emoji
+            document.getElementById("surprise").style.display = "block";
+
+            // Optional: change the title
+            document.getElementById("title").innerHTML = "SURPRISE! 😈";
 
             // Confetti
             for (let i = 0; i < 40; i++) {
